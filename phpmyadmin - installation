@@ -1,0 +1,17 @@
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+Include /etc/phpmyadmin/apache.conf
+sudo systemctl restart apache2
+
+
+or manualy
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.zip
+sudo apt install unzip
+unzip phpMyAdmin-5.0.2-all-languages.zip
+mv phpMyAdmin-5.0.2-all-languages phpmyadmin
+sudo mv phpmyadmin /var/www/html
+sudo mv config.sample.inc.php config.inc.php
+
+
+
+
+sudo mysqldump -u root -p database_name > example.sql  //To generate a SQL dump from Linux
